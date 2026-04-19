@@ -27,7 +27,8 @@ user_input = st.text_input("Ask me a task:")
 if st.button("Generate"):
     with st.spinner("Generating your command....."):
         output = ask_ai(user_input)
-         
+    explanation, cmd = extract_parts(output)
+    st.subheader("Explanation")     
     st.write(explanation)
 
     st.subheader("💻 Command")
